@@ -8,11 +8,9 @@ import { layoutProps } from "@/types";
 const Layout: FC<layoutProps> = ({ children }) => {
   return (
     <>
+      <Aside />
       <GroupHeader />
-      <main>
-        <Aside />
-        {children}
-      </main>
+      <main className="clear-right w-4/5">{children}</main>
     </>
   );
 };

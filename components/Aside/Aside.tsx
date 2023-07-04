@@ -1,19 +1,39 @@
-function Aside () {
-    return (
-        <aside>
+import NavLink from "../NavLink/NavLink";
+
+function Aside() {
+  return (
+    <aside className="float-left w-1/5">
       <ul>
-        <li>Катіони
+        <li>
+          <NavLink path={"/cations"}>
+            <p>Катіони</p>
+          </NavLink>
           <ul>
-            <li>Перша група
+            <li>
+              <NavLink path={"/cations/first-group"}>
+                <p>Перша група</p>
+              </NavLink>
               <ul>
                 <li>Na+</li>
                 <li>K+</li>
                 <li>NH4+</li>
               </ul>
             </li>
-            <li>Друга група</li>
-            <li>Третя група</li>
-            <li>Четверта група</li>
+            <li>
+              <NavLink path={"/cations/second-group"}>
+                <p>Друга група</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink path={"/cations/third-group"}>
+                <p>Третя група</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink path={"/cations/forth-group"}>
+                <p>Четверта група</p>
+              </NavLink>
+            </li>
             <li>П&#39;ята група</li>
             <li>Шоста група</li>
           </ul>
@@ -21,7 +41,7 @@ function Aside () {
         <li>Аніони</li>
       </ul>
     </aside>
-    )
+  );
 }
 
 export default Aside;
