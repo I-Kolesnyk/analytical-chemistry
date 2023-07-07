@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Link from "next/link";
 
-import { LinkTypes } from "@/types";
+import { LinkProps } from "@/types";
 
-const NavLink: FC<LinkTypes> = ({ path, children }) => {
+const NavLink: FC<LinkProps> = ({ path, children }) => {
   return <Link href={path}>{children}</Link>;
 };
 

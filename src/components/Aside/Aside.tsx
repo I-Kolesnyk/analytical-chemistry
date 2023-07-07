@@ -2,7 +2,7 @@ import NavLink from "../NavLink/NavLink";
 
 function Aside() {
   return (
-    <aside className="float-left w-1/5">
+    <aside className="float-left w-1/5 h-screen bg-emerald-700">
       <ul>
         <li>
           <NavLink path={"/cations"}>
