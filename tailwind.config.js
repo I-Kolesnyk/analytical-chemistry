@@ -6,6 +6,11 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+    },
     screens: {
       sm: "320px",
       md: "768px",
@@ -13,6 +18,14 @@ module.exports = {
     },
     colors: {
       transparent: "transparent",
+      teal: {
+        50: "#E7FCFE",
+        100: "#22A58D",
+        200: "#2B8474",
+      },
+      lilac: {
+        50: "#E290FE",
+      },
       emerald: {
         50: "#ecfdf5",
         100: "#d1fae5",
