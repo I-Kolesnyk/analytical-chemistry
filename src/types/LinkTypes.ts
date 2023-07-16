@@ -1,4 +1,4 @@
 export interface LinkProps {
   path: string;
-  children: React.ReactElement;
+  children: React.ReactNode;
 }
