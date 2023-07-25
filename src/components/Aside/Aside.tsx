@@ -2,6 +2,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 import NavLink from "../NavLink/NavLink";
+import CloseButton from "../CloseButton/CloseButton";
+import OpenButton from "../OpenButton/OpenButton";
+import ElementsList from "../ElementsList/ElementsList";
+
+import { firstGroupList, firstGroupPath } from "@/data/firstGroupList";
 
 function Aside() {
   const [isFirstGroupCationsOpen, setIsFirstGroupCationsOpen] = useState(false);
@@ -26,331 +31,105 @@ function Aside() {
         />
       </div>
       <div className="flex flex-col items-center gap-[23px]  mx-auto mb-14">
-        <p className="self-start text-teal-50 font-montserrat font-medium text-xl">
-          Катіони
-        </p>
+        <p className="group__text">Катіони</p>
         <ul className="flex flex-col gap-[20px] ml-[10px]">
-          <li>
+          <li className="group__item">
             <NavLink path={"/cations/first-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                Перша група
-              </p>
-              {isFirstGroupCationsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsFirstGroupCationsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsFirstGroupCationsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">Перша група</p>
             </NavLink>
+            {isFirstGroupCationsOpen ? (
+              <CloseButton onClick={() => setIsFirstGroupCationsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsFirstGroupCationsOpen(true)} />
+            )}
             {isFirstGroupCationsOpen && (
-              <ul className="flex flex-col gap-[16px] mt-[20px] ml-[16px]">
-                <li>
-                  <NavLink path={"/cations/second-group/sodium"}>
-                    <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                      Na<sup>+</sup>
-                    </p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink path={"/cations/second-group/potassium"}>
-                    <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                      K<sup>+</sup>
-                    </p>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink path={"/cations/second-group/potassium"}>
-                    <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                      NH<sub>4</sub>
-                      <sup>+</sup>
-                    </p>
-                  </NavLink>
-                </li>
-              </ul>
+              <ElementsList elements={firstGroupList} paths={firstGroupPath} />
             )}
           </li>
-          <li>
+          <li className="group__item">
             <NavLink path={"/cations/second-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                Друга група
-              </p>
-              {isSecondGroupCationsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsSecondGroupCationsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsSecondGroupCationsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">Друга група</p>
             </NavLink>
+            {isSecondGroupCationsOpen ? (
+              <CloseButton onClick={() => setIsSecondGroupCationsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsSecondGroupCationsOpen(true)} />
+            )}
           </li>
-          <li>
+          <li className="group__item">
             <NavLink path={"/cations/third-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                Третя група
-              </p>
-              {isThirdGroupCationsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsThirdGroupCationsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsThirdGroupCationsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">Третя група</p>
             </NavLink>
+            {isThirdGroupCationsOpen ? (
+              <CloseButton onClick={() => setIsThirdGroupCationsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsThirdGroupCationsOpen(true)} />
+            )}
           </li>
-          <li>
+          <li className="group__item">
             <NavLink path={"/cations/forth-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                Четверта група
-              </p>
-              {isForthGroupCationsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsForthGroupCationsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsForthGroupCationsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">Четверта група</p>
             </NavLink>
+            {isForthGroupCationsOpen ? (
+              <CloseButton onClick={() => setIsForthGroupCationsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsForthGroupCationsOpen(true)} />
+            )}
           </li>
-          <li>
+          <li className="group__item">
             <NavLink path={"/cations/fifth-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                {" "}
-                П&#39;ята група
-              </p>
-              {isFifthGroupCationsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsFifthGroupCationsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsFifthGroupCationsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">П&#39;ята група</p>
             </NavLink>
+            {isFifthGroupCationsOpen ? (
+              <CloseButton onClick={() => setIsFifthGroupCationsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsFifthGroupCationsOpen(true)} />
+            )}
           </li>
-          <li>
+          <li className="group__item">
             <NavLink path={"/cations/sixth-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                Шоста група
-              </p>
-              {isSixthGroupCationsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsSixthGroupCationsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsSixthGroupCationsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">Шоста група</p>
             </NavLink>
+            {isSixthGroupCationsOpen ? (
+              <CloseButton onClick={() => setIsSixthGroupCationsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsSixthGroupCationsOpen(true)} />
+            )}
           </li>
         </ul>
       </div>
       <div className="flex flex-col items-center gap-[23px]  mx-auto">
-        <p className="self-start text-teal-50 font-montserrat font-medium text-xl">
-          Аніони
-        </p>
+        <p className="group__text">Аніони</p>
         <ul className="flex flex-col gap-[20px] ml-[10px]">
-          <li>
+          <li className="group__item">
             <NavLink path={"/anions/first-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                Перша група
-              </p>
-              {isFirstGroupAnionsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsFirstGroupAnionsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsFirstGroupAnionsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">Перша група</p>
             </NavLink>
+            {isFirstGroupAnionsOpen ? (
+              <CloseButton onClick={() => setIsFirstGroupAnionsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsFirstGroupAnionsOpen(true)} />
+            )}
           </li>
-          <li>
+          <li className="group__item">
             <NavLink path={"/anions/second-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                Друга група
-              </p>
-              {isSecondGroupAnionsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsSecondGroupAnionsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsSecondGroupAnionsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">Друга група</p>
             </NavLink>
+            {isSecondGroupAnionsOpen ? (
+              <CloseButton onClick={() => setIsSecondGroupAnionsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsSecondGroupAnionsOpen(true)} />
+            )}
           </li>
-          <li>
+          <li className="group__item">
             <NavLink path={"/anions/third-group"}>
-              <p className="text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50">
-                Третя група
-              </p>
-              {isThirdGroupAnionsOpen ? (
-                <button
-                  type="button"
-                  onClick={() => setIsThirdGroupAnionsOpen(false)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-top.svg"}
-                    alt="closeIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsThirdGroupAnionsOpen(true)}
-                >
-                  <Image
-                    src={"/assets/icons/chevron-bottom.svg"}
-                    alt="openIcon"
-                    width={20}
-                    height={20}
-                  />
-                </button>
-              )}
+              <p className="group__link">Третя група</p>
             </NavLink>
+            {isThirdGroupAnionsOpen ? (
+              <CloseButton onClick={() => setIsThirdGroupAnionsOpen(false)} />
+            ) : (
+              <OpenButton onClick={() => setIsThirdGroupAnionsOpen(true)} />
+            )}
           </li>
         </ul>
       </div>
