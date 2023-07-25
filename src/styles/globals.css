@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap);
+
+.group__text {
+  @apply self-start text-teal-50 font-montserrat font-medium text-xl;
+}
+
+.group__item {
+  @apply flex justify-between w-[186px];
+}
+
+.group__link {
+  @apply text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50;
+}
+
+.element__item {
+  @apply text-teal-50 font-montserrat font-medium text-lg hover:text-lilac-50 focus:text-lilac-50;
+}
